@@ -1,17 +1,19 @@
-import produce from "immer";
+import produce from 'immer';
 
-import { DEFAULT_ACTION } from "./constants";
-import { Action, ContainerState } from "./types";
+import { Action } from '../../common/types';
+
+import { DEFAULT_ACTION } from './constants';
+import { ContainerState } from './types';
 
 export const initialState: ContainerState = {
-  container: "App",
+  container: 'App',
 };
 
 const appReducer = (state = initialState, action: Action) =>
   produce(state, (draft: ContainerState) => {
     switch (action.type) {
       case DEFAULT_ACTION:
-        draft.message = "Hello world";
+        draft.message = action.payload;
         break;
       default:
         break;

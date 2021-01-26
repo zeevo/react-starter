@@ -1,7 +1,10 @@
-import { DEFAULT_ACTION } from "./constants";
+import { Action } from '../../common/types';
 
-export function defaultAction() {
+import { DEFAULT_ACTION } from './constants';
+
+export function defaultAction(): Action {
   return {
     type: DEFAULT_ACTION,
+    payload: 'Hello world',
   };
 }
